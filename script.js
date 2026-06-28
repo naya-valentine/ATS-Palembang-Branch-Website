@@ -19,10 +19,10 @@ function loadMembers() {
 // loadMembers() 
 //the averafe loadMemvers won't work with back tabs, because the wbesite restoores the snapshot of "Page 2" exactly as it was
 window.addEventListener("pageshow", (e)=> {
-    if (event.persisted) {
+    if (e.persisted) {
         loadMembers()
     } else {
-        loadMembers()
+        console.log("do nothing")
     }
 }
 // pageshow event dires whenever a webpage becomes visible to the user, so it will fire when the Back Button is hit
