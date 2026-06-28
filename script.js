@@ -16,8 +16,16 @@ const memberPage2 = document.getElementById("memberPage2")
 function loadMembers() {
     memberPageWrapper.classList.remove("slide")
 }
-loadMembers() 
-
+// loadMembers() 
+//the averafe loadMemvers won't work with back tabs, because the wbesite restoores the snapshot of "Page 2" exactly as it was
+window.addEventListener("pageshow", (e)=> {
+    if (event.persisted) {
+        loadMembers()
+    } else {
+        loadMembers()
+    }
+}
+// pageshow event dires whenever a webpage becomes visible to the user, so it will fire when the Back Button is hit
 //Vissions Content
 dropDownGoals.addEventListener("click", () => {
     if (!dropDownGoalsContent.classList.contains("hidden")) {
