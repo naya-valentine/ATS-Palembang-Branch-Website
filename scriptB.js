@@ -99,3 +99,4 @@ fetch("blogContent.json")   //promise a response
             document.getElementById("title").innerText = "Blog Not Found"; 
         }
     })
+    // add code
