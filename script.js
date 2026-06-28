@@ -16,16 +16,30 @@ const memberPage2 = document.getElementById("memberPage2")
 function loadMembers() {
     memberPageWrapper.classList.remove("slide")
 }
-// loadMembers() 
-//the averafe loadMemvers won't work with back tabs, because the wbesite restoores the snapshot of "Page 2" exactly as it was
-window.addEventListener("pageshow", (e)=> {
-    if (e.persisted) {
-        loadMembers()
-    } else {
-        console.log("do nothing")
-    }
-}
+loadMembers() 
+//the averafe loadMemvers won't work with back tabs, because the wbesite restoores the snapshot of "Page 2" exactly as it was, this is called bfcache (back-forward cache)
+// window.addEventListener("pageshow", (e)=> {
+//     if (e.persisted) {
+//         loadMembers()
+//     } else {
+//         console.log("do nothing")
+//     }
+// }
 // pageshow event dires whenever a webpage becomes visible to the user, so it will fire when the Back Button is hit
+// this won't work either because then the next button would never work since the loadMembers will keep commencing
+
+// window.addEventListener("pageshow", (e)=> {
+//     const navEntries = performance.getEntriesByType("navigation"); 
+//     if (navEntries.length > 0) { 
+// // in javascript, if you try to look at an empty array it will crash
+// // 
+//         const navType = navEntries[0].type
+//         if (navType === "back_forward"){
+//             loadMembers()
+//         }
+//     }
+// })
+// this will check what kind of action is done in navigation and then act accordingly, but it will only work if  you directly change the URL, otherwise it won't detect anything  
 //Vissions Content
 dropDownGoals.addEventListener("click", () => {
     if (!dropDownGoalsContent.classList.contains("hidden")) {
