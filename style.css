@@ -245,6 +245,7 @@ nav a:active {
     height: 30px;
     background-color: var(--pink);
     color: white;
+    gap: 50px;
 }
 .vission {
     display: flex;
@@ -511,6 +512,9 @@ nav a:active {
     .vissionCards {
         flex-direction: column;
     }
+    .ribbon{
+        gap: 5px;
+    }
 }
 @media (max-width: 749px) {
     * {
@@ -553,6 +557,9 @@ nav a:active {
     .vission h1 {
         padding: 20px; 
     }
+    .ribbon{
+        gap: 5px;
+    }
 }
 @media (max-width: 394px) {
     .about {
@@ -574,5 +581,8 @@ nav a:active {
         justify-content: center;
         min-width: 100%;
     }  
+    .ribbon{
+        gap: 5px;
+    }
 } 
 
